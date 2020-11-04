@@ -1,0 +1,185 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#div {
+  width: 100px;
+  height: 200px;
+}
+
+#div1 {
+  color: red;
+}
+
+#div1 .box {
+  background-color: orange;
+}
+
+#div3 {
+  color: red;
+}
+
+/*
+    特殊变量
+    表达式/变量 : 进行字符串拼接
+    类似于教授中的ecma6中的 ${}
+
+*/
+/*
+    嵌套选择器
+*/
+#div5 {
+  width: 100px;
+}
+
+#div5 .box {
+  height: 200px;
+}
+
+#div5 a {
+  background-color: red;
+}
+
+#div5 a:hover {
+  color: orange;
+  background-color: blue;
+}
+
+/*
+    混合 代码块（不是函数）
+
+    通用的大量相同代码
+
+
+    声明
+    @mixin 混合名字{
+
+    }
+    调用
+    @include 混合名字;
+
+    注：可以选择有参数或者没有参数
+
+*/
+#div10 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#div10 .box {
+  content: '';
+  display: block;
+  height: 0px;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+#div10 #conet {
+  border-right: 3px dashed red;
+  border-top: 3px dashed red;
+  padding-left: 50px;
+}
+
+/*
+
+    继承  @extend
+*/
+.btn, .btn-primary, .btn-success {
+  width: 200px;
+  height: 100px;
+}
+
+.btn a, .btn-primary a, .btn-success a {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: blue;
+}
+
+.btn-success {
+  background-color: green;
+}
+
+/*
+    声明公共样式的时候：
+        标准：_base.scss
+        引入: @import "base"
+
+*/
+/*
+    声明公共样式的时候：
+        标准：_base.scss
+        引入: @import "base"
+
+*/
+body {
+  font-size: 14px;
+  font-family: "微软雅黑";
+  color: #666;
+  background: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: top;
+  display: block;
+  border: none;
+}
+
+a, input {
+  outline: none;
+}
+
+em, i {
+  font-style: normal;
+}
+
+b, strong, h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.border0 {
+  border: none;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/*
+    多行注释 会出现在在.css中 不会出现在min中
+*/
+/*!
+    强制注释  任何版本都会保留
+*/
+/*
+    sass 数据类型
+        数字 ： 1.2  、 13  、 10px
+        字符串 ： "foo" 、 'bar' 、 baz
+        颜色 ： blue , #04a3f9 , rgba(255,0,0,0.5)
+        布尔值 ： true 、 false
+        空值 ： null
+        列表 （list）用空格或逗号分隔 ： c 1.5em 1em 0 2em, Helvetica, Arial, sans-serif
+        映射  : key1 : value1,key2:value2  mao映射  键-》值
+*/

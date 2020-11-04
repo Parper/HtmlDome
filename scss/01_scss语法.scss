@@ -1,0 +1,201 @@
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+// 变量  自上而下覆盖
+$res : 100px;
+// 默认变量  只要重新赋值就覆盖
+$yyy : 200px !default;
+
+#div{
+    width: $res;
+    height: $yyy;
+}
+
+$col : red;
+#div1{
+    color: $col; // red
+    $col : orange; // 局部
+    // $col : orange !global; // 强制设为全局
+    .box{
+        background-color: $col; //orange
+    }
+}
+#div3{
+    color: $col; // red
+}
+
+
+/*
+    特殊变量
+    #{表达式/变量} : 进行字符串拼接
+    类似于教授中的ecma6中的 ${}
+
+*/
+$ttt : top;
+
+
+// #div4{
+// //   border-#{$zzz}: 1px solid black;
+// }
+
+
+
+/*
+    嵌套选择器
+*/
+
+
+#div5{
+    width: 100px;
+    .box{
+        height: 200px;
+    }
+    a{
+        background-color: red;
+        // & 父级元素选择器
+        &:hover{
+            color: orange;
+            background-color: blue;
+        }
+    }
+}
+
+
+/*
+    混合 代码块（不是函数）
+
+    通用的大量相同代码
+
+
+    声明
+    @mixin 混合名字{
+
+    }
+    调用
+    @include 混合名字;
+
+    注：可以选择有参数或者没有参数
+
+*/
+
+// 无参数混合
+@mixin center-block{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin  clearBoth {
+    content : '';
+    display: block;
+    height: 0px;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+
+// 带参数的混合
+@mixin xxx($paddind : 30px,$border : 1px solid block) {
+    border-right: $border;
+    border-top: $border;
+    padding-left: $paddind;
+}
+
+
+
+
+
+
+
+
+#div10{
+    @include center-block;
+    .box{
+        @include clearBoth;
+    }
+    #conet{
+        // @include xxx($border,3px dashed red);
+        @include xxx(50px,3px dashed red);
+    }
+}
+
+/*
+
+    继承  @extend
+*/
+.btn{
+    width: 200px;
+    height: 100px;
+    a{
+        text-decoration: none;
+    }
+}
+
+.btn-primary{
+    @extend .btn;
+    background-color: blue;
+}
+
+.btn-success{
+    @extend .btn;
+    background-color: green;
+}
+
+
+
+/*
+    声明公共样式的时候：
+        标准：_base.scss
+        引入: @import "base"
+
+*/
+
+@import "02_引入公共文件";
+
+
+
+// 单行注释  不会显示在.css中
+
+
+/*
+    多行注释 会出现在在.css中 不会出现在min中
+*/
+
+/*!
+    强制注释  任何版本都会保留
+*/
+
+
+
+/*
+    sass 数据类型
+        数字 ： 1.2  、 13  、 10px
+        字符串 ： "foo" 、 'bar' 、 baz
+        颜色 ： blue , #04a3f9 , rgba(255,0,0,0.5)
+        布尔值 ： true 、 false
+        空值 ： null
+        列表 （list）用空格或逗号分隔 ： c 1.5em 1em 0 2em, Helvetica, Arial, sans-serif
+        映射  : key1 : value1,key2:value2  mao映射  键-》值
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
