@@ -50,6 +50,19 @@
                     1.git reset --hard HEAD^  退回到上一个版本
                     2.git reset --hard HEAD^^  退回两个版本
                     3.git reset --hard 版本号 
+                
+                 远程厂库地址：   https://github.com/Parper/HtmlDome.git
+                11.从暂存区提交数据到远程厂库
+                    1.生成ssh密匙
+                        ssh-keygen -t rsa -C "你github的邮箱地址"
+                    2.找到密匙文件 
+                        我的电脑 =》 用户 =》 用户名文件夹 =》 .ssh(隐藏文件夹) =》xxx.pub(存有密匙)
+                    3.github上配置密匙
+                
+                12.提交命令
+                    git remote add origin 厂库地址
+                    git push -u origin master
+
           -->
     </head>
     <body>
